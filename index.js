@@ -10,7 +10,7 @@ const Canvas = require('canvas');
  * @param [option.textColor='black']
  * @param [option.bgColor]
  * @param [option.lineSpacing=0]
- * @param [option.padding=0]
+ * @param [option.ypadding=0]
  * @param [option.output='buffer'] 'buffer', 'stream', 'dataURL', 'canvas'
  * @returns {string} png image buffer
  */
@@ -19,7 +19,7 @@ module.exports = (text, option) => {
   option.font = option.font || '30px sans-serif';
   option.textColor = option.textColor || 'black';
   option.lineSpacing = option.lineSpacing || 0;
-  option.padding = option.padding || 0;
+  option.ypadding = option.ypadding || 0;
   option.output = option.output || 'buffer';
 
   const canvas = new Canvas(0, 0);
@@ -52,8 +52,8 @@ module.exports = (text, option) => {
   });
 
   const lineHeight = max.ascent + max.descent + option.lineSpacing;
-  canvas.width = max.left + max.right + option.padding * 2;
-  canvas.height = lineHeight * lineProps.length + option.padding * 2 - option.lineSpacing - (max.descent - lastDescent);
+  canvas.width = max.left + max.right + option.xpadding * 2;
+  canvas.height = lineHeight * lineProps.length + option.ypadding * 2 - option.lineSpacing - (max.descent - lastDescent);
 
   if (option.bgColor) {
     ctx.fillStyle = option.bgColor;
@@ -63,9 +63,9 @@ module.exports = (text, option) => {
   ctx.font = option.font;
   ctx.fillStyle = option.textColor;
   ctx.antialias = 'gray';
-  let offsetY = option.padding;
+  let offsetY = option.ypadding;
   lineProps.forEach(lineProp => {
-    ctx.fillText(lineProp.line, lineProp.left + option.padding, max.ascent + offsetY);
+    ctx.fillText(lineProp.line, lineProp.left + option.xpadding, max.ascent + offsetY);
     offsetY += lineHeight;
   });
 
