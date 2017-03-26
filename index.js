@@ -19,6 +19,7 @@ module.exports = (text, option) => {
   option.font = option.font || '30px sans-serif';
   option.textColor = option.textColor || 'black';
   option.lineSpacing = option.lineSpacing || 0;
+  option.xpadding = option.xpadding || 0;
   option.ypadding = option.ypadding || 0;
   option.output = option.output || 'buffer';
 
