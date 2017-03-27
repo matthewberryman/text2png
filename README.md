@@ -36,7 +36,8 @@ See [node-canvas wiki](https://github.com/Automattic/node-canvas/wiki) on instal
 |option.textColor|'black'|
 |option.bgColor|null|
 |option.lineSpacing|0|
-|option.padding|0|
+|option.xpadding|0|
+|option.ypadding|0|
 |option.output|'buffer'|
 
 ``option.output = 'buffer' | 'stream' | 'dataURL' | 'canvas'``
@@ -51,7 +52,8 @@ text2png('Example\nText', {
   textColor: 'teal',
   bgColor: 'linen',
   lineSpacing: 10,
-  padding: 20
+  xpadding: 20,
+  ypadding: 20
 });
 ```
 
