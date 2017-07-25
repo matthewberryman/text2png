@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/matthewberryman/text2png#readme",
   "dependencies": {
-    "canvas-prebuilt": "^1.6.7"
+    "canvas-prebuilt": "^1.6.0"
   }
 }
