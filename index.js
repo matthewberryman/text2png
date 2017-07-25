@@ -1,6 +1,6 @@
 'use strict';
 
-const Canvas = require('canvas');
+const Canvas = require('canvas-prebuilt');
 
 /**
  * Convert text to PNG image.
